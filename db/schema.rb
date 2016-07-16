@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714003803) do
+ActiveRecord::Schema.define(version: 20160714230521) do
+
+  create_table "locations", force: :cascade do |t|
+    t.float    "latitud"
+    t.float    "longitud"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "park_records", force: :cascade do |t|
+    t.datetime "date_details"
+    t.string   "comment"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "slots", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
